@@ -1,104 +1,97 @@
-{% set title = '4ward_chat' %}
-{% set filename = 'index.html' %}
-
-{% extends 'src/layouts/master.html' %}
-
-{% block styles %}
-<link rel="stylesheet" href="/assets/scss/iconly.scss">
-{% endblock %}
-
-{% block content %}
-<div class="page-heading" style="display: inline;">
-    <div class="col-12 col-lg-12">
-        <!-- 프로필 보는 페이지 -->
-        <div class="card">
-            <div class="card-body py-4 px-4">
-                <div class="d-flex align-items-center">
-                    <div class="avatar avatar-xl">
-                        <img src="assets/static/images/faces/1.jpg" alt="Face 1">
-                    </div>
-                    <div class="ms-3 name">
-                        <h5 class="font-bold">김한경</h5>
-                        <h6 class="text-muted mb-0">@johnducky</h6>
-                        
-                    </div>
-                    <div class="ms-5 name">
-                    </div>
-                    <div class="avatar avatar-xl">
-                        <h3 style="display: inleine;">4ward_chat shopping</h3>
-                    </div>
-                </div>
-            </div>
+{% set title = '4ward_chat' %} {% set filename = 'index.html' %} {% extends
+'src/layouts/master.html' %} {% block styles %}
+<link rel="stylesheet" href="/assets/scss/iconly.scss" />
+{% endblock %} {% block content %}
+<div class="page-heading" style="display: inline">
+  <div class="col-12 col-lg-12">
+    <!-- 프로필 보는 페이지 -->
+    <div class="card">
+      <div class="card-body py-4 px-4">
+        <div class="d-flex align-items-center">
+          <div class="avatar avatar-xl">
+            <img src="assets/static/images/faces/1.jpg" alt="Face 1" />
+          </div>
+          <div class="ms-3 name">
+            <h5 class="font-bold">김한경</h5>
+            <h6 class="text-muted mb-0">@johnducky</h6>
+          </div>
+          <div class="ms-5 name"></div>
+          <div class="avatar avatar-xl">
+            <h3 style="display: inleine">4ward_chat shopping</h3>
+          </div>
         </div>
-        
+      </div>
     </div>
-    
-</div> 
-<div class="page-content h-100"> 
-    <section class="row">
-        <!-- 대화 내용 보는 곳 -->
-        <div class="col-12 col-lg-12">
-            <div class="row">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Let's ask!</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-lg">
-                                <tbody>
-                                    <tr>
-                                        <td class="col-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar avatar-md">
-                                                    <img src="assets/static/images/faces/5.jpg">
-                                                </div>
-                                                <p class="font-bold ms-3 mb-0">김한경</p>
-                                            </div>
-                                        </td>
-                                        <td class="col-auto">
-                                            <p class=" mb-0">스트릿 패션은 나의 이상향이야!</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar avatar-md">
-                                                    <img src="assets/static/images/faces/2.jpg">
-                                                </div>
-                                                <p class="font-bold ms-3 mb-0">Chatbot</p>
-                                            </div>
-                                        </td>
-                                        <td class="col-auto">
-                                            <p class=" mb-0">그럼요! 한경님은 절대로 단정한 패션을 원하지 않아요! 스트릿 홍대 느낌나게 해드릴까요?</p>
-                                        </td>
-                                    </tr>
-                                    <!-- 테이블에서 제  -->
-                                    <tr>
-                                        <td class="col-3">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar avatar-md">
-                                                    <img src="assets/static/images/faces/5.jpg">
-                                                </div>
-                                                <p class="font-bold ms-3 mb-0">김한경</p>
-                                            </div>  
-                                        </td>
-                                        <td class="col-auto">
-                                                <!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
-                                                <div class="form-floating">
-                                                    <p class=" mb-0">진행시켜</p>
-                                                </div>
-                                                <!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
-                                                <!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
+  </div>
+</div>
+<div class="page-content h-100">
+  <section class="row">
+    <!-- 대화 내용 보는 곳 -->
+    <div class="col-12 col-lg-12">
+      <div class="row">
+        <div class="card">
+          <div class="card-header">
+            <h4>Let's ask!</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover table-lg">
+                <tbody>
+                  <tr>
+                    <td class="col-3">
+                      <div class="d-flex align-items-center">
+                        <div class="avatar avatar-md">
+                          <img src="assets/static/images/faces/5.jpg" />
+                        </div>
+                        <p class="font-bold ms-3 mb-0">김한경</p>
+                      </div>
+                    </td>
+                    <td class="col-auto">
+                      <p class="mb-0">스트릿 패션은 나의 이상향이야!</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-3">
+                      <div class="d-flex align-items-center">
+                        <div class="avatar avatar-md">
+                          <img src="assets/static/images/faces/2.jpg" />
+                        </div>
+                        <p class="font-bold ms-3 mb-0">Chatbot</p>
+                      </div>
+                    </td>
+                    <td class="col-auto">
+                      <p class="mb-0">
+                        그럼요! 한경님은 절대로 단정한 패션을 원하지 않아요!
+                        스트릿 홍대 느낌나게 해드릴까요?
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- 테이블에서 제  -->
+                  <tr>
+                    <td class="col-3">
+                      <div class="d-flex align-items-center">
+                        <div class="avatar avatar-md">
+                          <img src="assets/static/images/faces/5.jpg" />
+                        </div>
+                        <p class="font-bold ms-3 mb-0">김한경</p>
+                      </div>
+                    </td>
+                    <td class="col-auto">
+                      <!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
+                      <div class="form-floating">
+                        <p class="mb-0">진행시켜</p>
+                      </div>
+                      <!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
+                      <!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
                                                     <i class="bi bi-pencil"></i>
                                                 </button>
                                                  -->
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- <tr>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <tr>
                             <td class="col-3">
                                 <div class="d-flex align-items-center">
                                     <div class="avatar avatar-md">
@@ -120,15 +113,13 @@
                                     </button>
                             </td>
                         </tr> -->
-
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="col-12 col-lg-3">
-            
-            <!-- 최근 메시지 보기 예시 -->
-            <!-- <div class="card">
+      </div>
+    </div>
+    <div class="col-12 col-lg-3">
+      <!-- 최근 메시지 보기 예시 -->
+      <!-- <div class="card">
                 <div class="card-header">
                     <h4>Recent Messages</h4>
                 </div>
@@ -162,129 +153,155 @@
                     </div>
                 </div>
             </div>  -->
-        </div>
+    </div>
     <div class="col-12 col-lg-12">
-        <div class="row">
-            <div class="card">
-                <table class="table table-hover table-lg">
-                    <tbody>
-                        <tr>
-                            <td class="col-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-md">
-                                        <img src="assets/static/images/faces/5.jpg">
-                                    </div>
-                                    <p class="font-bold ms-3 mb-0">김한경</p>
-                                </div>  
-                            </td>
-                            <td class="col-auto">
-                                    <!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
-                                    <div class="form-floating">
-                                        <textarea class="form-control col-auto" placeholder="Leave a comment here"
-                                            id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Comments</label>
-                                    </div>
-                                    <!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
-                                    <!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
+      <div class="row">
+        <div class="card">
+          <table class="table table-hover table-lg">
+            <tbody>
+              <tr>
+                <td class="col-3">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar avatar-md">
+                      <img src="assets/static/images/faces/5.jpg" />
+                    </div>
+                    <p class="font-bold ms-3 mb-0">김한경</p>
+                  </div>
+                </td>
+                <td class="col-auto">
+                  <!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
+                  <div class="form-floating">
+                    <div class="d-flex bd-highlight">
+                        <div class="p-2 flex-fill bd-highlight">
+                          <textarea
+                            class="form-control col-auto"
+                            placeholder="Comments"
+                            id="floatingTextarea"
+                          ></textarea>
+                          <!-- <label for="floatingTextarea">Comments </label> -->
+                        </div>
+                        <div class="p-2 bd-highlight pt-3">
+                          <button
+                            id="send"
+                            onclick="socket.send('go')"
+                            class="btn icon btn-primary"
+                          >
+                            <i class="bi bi-pencil"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <textarea
+                      class="form-control col-auto"
+                      placeholder="Leave a comment here"
+                      id="floatingTextarea"
+                    ></textarea>
+                    <label for="floatingTextarea">Comments </label>
+                    <button
+                      id="send"
+                      onclick="socket.send('go')"
+                      class="btn icon btn-primary"
+                    >
+                      <i class="bi bi-pencil"></i>
+                    </button> -->
+                  </div>
+                  <!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
+                  <!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
                                         <i class="bi bi-pencil"></i>
                                     </button>
                                      -->
-                            </td>
-                        </tr>    
-                    </tbody>
-                </table>
-        
-            </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        
+      </div>
     </div>
-    </section>
+  </section>
 </div>
 <script>
-    // 웹소켓 열어달라는 코드
-    let socket = new WebSocket('ws://localhost:8081')
-    const Chat = (function(){
+  // 웹소켓 열어달라는 코드
+  let socket = new WebSocket("ws://localhost:8081");
+  const Chat = (function () {
     const myName = "blue";
- 
+
     // init 함수
     function init() {
-        // enter 키 이벤트
-        $(document).on('keydown', 'div.input-div textarea', function(e){
-            if(e.keyCode == 13 && !e.shiftKey) {
-                e.preventDefault();
-                const message = $(this).val();
- 
-                // 메시지 전송
-                sendMessage(message);
-                // 입력창 clear
-                clearTextarea();
-            }
-        });
+      // enter 키 이벤트
+      $(document).on("keydown", "div.input-div textarea", function (e) {
+        if (e.keyCode == 13 && !e.shiftKey) {
+          e.preventDefault();
+          const message = $(this).val();
+
+          // 메시지 전송
+          sendMessage(message);
+          // 입력창 clear
+          clearTextarea();
+        }
+      });
     }
- 
+
     // 메세지 태그 생성
     function createMessageTag(LR_className, senderName, message) {
-        // 형식 가져오기
-        let chatLi = $('div.chat.format ul li').clone();
-        // 조건문
-        // 카드 배출일때
-        // 결제 요청일때
-        // 
-        // 값 채우기
+      // 형식 가져오기
+      let chatLi = $("div.chat.format ul li").clone();
+      // 조건문
+      // 카드 배출일때
+      // 결제 요청일때
+      //
+      // 값 채우기
 
-        chatLi.addClass(LR_className);
-        chatLi.find('.sender span').text(senderName);
-        chatLi.find('.message span').text(message);
- 
-        return chatLi;
+      chatLi.addClass(LR_className);
+      chatLi.find(".sender span").text(senderName);
+      chatLi.find(".message span").text(message);
+
+      return chatLi;
     }
- 
+
     // 메세지 태그 append
     function appendMessageTag(LR_className, senderName, message) {
-        const chatLi = createMessageTag(LR_className, senderName, message);
- 
-        $('div.chat:not(.format) ul').append(chatLi);
- 
-        // 스크롤바 아래 고정
-        $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+      const chatLi = createMessageTag(LR_className, senderName, message);
+
+      $("div.chat:not(.format) ul").append(chatLi);
+
+      // 스크롤바 아래 고정
+      $("div.chat").scrollTop($("div.chat").prop("scrollHeight"));
     }
- 
+
     // 메세지 전송
     function sendMessage(message) {
-        // 서버에 전송하는 코드로 후에 대체
-        const data = {
-            "senderName"    : "blue",
-            "message"        : message
-        };
- 
-        // 통신하는 기능이 없으므로 여기서 receive
-        socket.send(data)
-        resive(data);
+      // 서버에 전송하는 코드로 후에 대체
+      const data = {
+        senderName: "blue",
+        message: message,
+      };
+
+      // 통신하는 기능이 없으므로 여기서 receive
+      socket.send(data);
+      resive(data);
     }
- 
+
     // 메세지 입력박스 내용 지우기
     function clearTextarea() {
-        $('div.input-div textarea').val('');
+      $("div.input-div textarea").val("");
     }
- 
+
     // 메세지 수신
     function resive(data) {
-        const LR = (data.senderName != myName)? "left" : "right";
-        appendMessageTag("right", data.senderName, data.message);
+      const LR = data.senderName != myName ? "left" : "right";
+      appendMessageTag("right", data.senderName, data.message);
     }
- 
-    return {
-        'init': init
-    };
-})();
- 
-$(function(){
-    Chat.init();
-});
 
+    return {
+      init: init,
+    };
+  })();
+
+  $(function () {
+    Chat.init();
+  });
 </script>
-{% endblock %}
-{% block js %}
+{% endblock %} {% block js %}
 <!-- Need: Apexcharts -->
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/static/js/pages/dashboard.js"></script>
