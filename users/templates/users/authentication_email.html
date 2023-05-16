@@ -1,0 +1,5 @@
+안녕하세요 {{ user.nickname }} 회원님,
+회원 가입 해주셔서 감사합니다.
+아래 링크를 통해 계정을 활성화 해주세요.
+http://{{ domain }}{% url 'user:activate' uidb64=uid token=token %}
+계정이 활성화 되면 로그인 페이지로, 만료된 링크일 시 회원가입 페이지로 넘어갑니다.
