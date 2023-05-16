@@ -1,0 +1,337 @@
+{% set title = '4ward_chat' %}
+{% set filename = 'index.html' %}
+
+{% extends 'src/layouts/master.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="/assets/scss/iconly.scss">
+{% endblock %}
+
+{% block content %}
+<div class="page-heading" style="display: inline;">
+    <div class="col-12 col-lg-12">
+        <!-- 프로필 보는 페이지 -->
+        <div class='row'>
+            <div class="card">
+                <div class="card-body py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-xl">
+                            <img src="assets/static/images/faces/1.jpg" alt="Face 1">
+                        </div>
+                        <div class="ms-3 name">
+                            <h5 class="font-bold">김한경</h5>
+                            <h6 class="text-muted mb-0">@johnducky</h6>
+                            
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="avatar avatar-xl">
+                            <h3 style="display: inleine;">My Page</h3>
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="ms-5 name">
+                        </div>
+                        <div class="button">
+                            <a href="#" class="btn icon icon-left btn-primary"><i data-feather="edit"></i> 정보수정하기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    
+</div> 
+<div class="page-content h-100"> 
+    <section class="row">
+        <!-- 간단한 구매 내용 보여주기 -->
+        <div class="col-12 col-lg-12">
+            <div class="row">
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon purple mb-2">
+                                        <i class="iconly-boldShow"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Profile Views</h6>
+                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card"> 
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon blue mb-2">
+                                        <i class="iconly-boldProfile"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Followers</h6>
+                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon green mb-2">
+                                        <i class="iconly-boldAdd-User"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Following</h6>
+                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon red mb-2">
+                                        <i class="iconly-boldBookmark"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Saved Post</h6>
+                                    <h6 class="font-extrabold mb-0">112</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- 대화 내용 보는 곳 -->
+        <div class="col-12 col-lg-12">
+            <!-- 최근 메시지 보기 예시 -->
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>최근 구매</h4>
+                        </div>
+                        <div class="card-content pb-4">
+                            <div class="recent-message d-flex px-4 py-3">
+                                <div class="avatar avatar-lg">
+                                    <img src="assets/static/images/faces/4.jpg">
+                                </div>
+                                <div class="name ms-4">
+                                    <h6 class="mb-1">홍대패션 지존 상의 </h6>
+                                </div>
+                            </div>
+                            <div class="recent-message d-flex px-4 py-3">
+                                <div class="avatar avatar-lg">
+                                    <img src="assets/static/images/faces/5.jpg">
+                                </div>
+                                <div class="name ms-4">
+                                    <h6 class="mb-1">어쩔 남친룩</h6>
+                                </div>
+                            </div>
+                            <div class="recent-message d-flex px-4 py-3">
+                                <div class="avatar avatar-lg">
+                                    <img src="assets/static/images/faces/1.jpg">
+                                </div>
+                                <div class="name ms-4">
+                                    <h6 class="mb-1">스트릿은 물씬 바지</h6>
+                                </div>
+                            </div>
+                            <div class="px-4">
+                                <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>구매 더보기</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-9">
+                    <div class="card-group">
+                        <div class="card">
+                            <div class="card-content">
+                                <img class="card-img-top img-fluid" src="assets/static/images/samples/1.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">
+                                        This card has supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <small class="text-muted">Last updated 3 mins ago.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <img class="card-img-top img-fluid" src="assets/static/images/samples/2.png"
+                                    alt="Card image cap" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">
+                                        This card has supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <small class="text-muted">Last updated 3 mins ago.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <img class="card-img-top img-fluid" src="assets/static/images/samples/3.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">
+                                        This card has supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <small class="text-muted">Last updated 3 mins ago.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <img class="card-img-top img-fluid" src="assets/static/images/samples/4.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">
+                                        This card has supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <small class="text-muted">Last updated 3 mins ago.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+        
+    </div>
+    </section>
+</div>
+<script>
+    // 웹소켓 열어달라는 코드
+    let socket = new WebSocket('ws://localhost:8081')
+    const Chat = (function(){
+    const myName = "blue";
+ 
+    // init 함수
+    function init() {
+        // enter 키 이벤트
+        $(document).on('keydown', 'div.input-div textarea', function(e){
+            if(e.keyCode == 13 && !e.shiftKey) {
+                e.preventDefault();
+                const message = $(this).val();
+ 
+                // 메시지 전송
+                sendMessage(message);
+                // 입력창 clear
+                clearTextarea();
+            }
+        });
+    }
+ 
+    // 메세지 태그 생성
+    function createMessageTag(LR_className, senderName, message) {
+        // 형식 가져오기
+        let chatLi = $('div.chat.format ul li').clone();
+        // 조건문
+        // 카드 배출일때
+        // 결제 요청일때
+        // 
+        // 값 채우기
+
+        chatLi.addClass(LR_className);
+        chatLi.find('.sender span').text(senderName);
+        chatLi.find('.message span').text(message);
+ 
+        return chatLi;
+    }
+ 
+    // 메세지 태그 append
+    function appendMessageTag(LR_className, senderName, message) {
+        const chatLi = createMessageTag(LR_className, senderName, message);
+ 
+        $('div.chat:not(.format) ul').append(chatLi);
+ 
+        // 스크롤바 아래 고정
+        $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+    }
+ 
+    // 메세지 전송
+    function sendMessage(message) {
+        // 서버에 전송하는 코드로 후에 대체
+        const data = {
+            "senderName"    : "blue",
+            "message"        : message
+        };
+ 
+        // 통신하는 기능이 없으므로 여기서 receive
+        socket.send(data)
+        resive(data);
+    }
+ 
+    // 메세지 입력박스 내용 지우기
+    function clearTextarea() {
+        $('div.input-div textarea').val('');
+    }
+ 
+    // 메세지 수신
+    function resive(data) {
+        const LR = (data.senderName != myName)? "left" : "right";
+        appendMessageTag("right", data.senderName, data.message);
+    }
+ 
+    return {
+        'init': init
+    };
+})();
+ 
+$(function(){
+    Chat.init();
+});
+
+</script>
+{% endblock %}
+{% block js %}
+<!-- Need: Apexcharts -->
+<script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
+<script src="assets/static/js/pages/dashboard.js"></script>
+{% endblock %}
