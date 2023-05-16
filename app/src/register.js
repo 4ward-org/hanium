@@ -16,8 +16,36 @@ if(pw.value != pwCheck.value){
 }
 }
 
-signBtn.addEventListener("click",test)
-function test(){
-    console.log("Test")
-    check()
+
+function requestPostBodyJson(){
+    console.log("")
+    console.log("[requestPostBodyJson] : [start]")
+
+    var reqURL ="http://127.0.0.1:8000/users/register/"
+    var jsonData = {
+        "user_id" : userId.value,
+        "name" : userName.value,
+        "password" : pw.value,
+        "password2" : pwCheck.value,
+        "gender" : gender.value,
+        "phone_number" : phone.value,
+        "address" : address.value,
+        "birth" : birth.value,
+        "email" : email.value,
+    }
 }
+// signBtn.addEventListener("click",test)
+// function test(){
+//     console.log("Test")
+//     check()
+// }
+
+$.ajax({
+    url:127.0.0.1:8000/users/register/,
+    data : JSON.stringify(jsonData),
+    type : "post"
+    async : false,
+    timeout : 5000,
+    dataType: "JSON"
+    contentType : "application/json; charset=utf-8"
+})
