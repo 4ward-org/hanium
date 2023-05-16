@@ -33,19 +33,16 @@ function requestPostBodyJson(){
         "birth" : birth.value,
         "email" : email.value,
     }
+    $.ajax({
+        url: "http://127.0.0.1:8000/users/register/",
+        data : JSON.stringify(jsonData),
+        type : "post",
+        async : false,
+        timeout : 5000,
+        dataType: "JSON",
+        contentType : "application/json; charset=utf-8"
+    })
 }
-// signBtn.addEventListener("click",test)
-// function test(){
-//     console.log("Test")
-//     check()
-// }
+signBtn.addEventListener("click",requestPostBodyJson)
 
-$.ajax({
-    url:127.0.0.1:8000/users/register/,
-    data : JSON.stringify(jsonData),
-    type : "post"
-    async : false,
-    timeout : 5000,
-    dataType: "JSON"
-    contentType : "application/json; charset=utf-8"
-})
+
