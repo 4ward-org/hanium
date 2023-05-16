@@ -1,18 +1,37 @@
 from django.contrib import admin
 from . import models
 
-
+@admin.register(models.Address)
+class AddressAdmin(admin.ModelAdmin):
+    list_display = (
+        'post_code', 
+        'road_address', 
+        'detail_address',
+        )
+    
+    search_fields = (
+        'post_code', 
+        'road_address', 
+        'detail_address'
+        )
+    
 @admin.register(models.User)
 class UserAdmin(admin.ModelAdmin):
 
     list_display = (
-        'nickname',
-        'username',
-        'university',
-        'date_joined',
+        'user_id',
+        'name',
+        'gender',
+        'birth',
+        'phone_number',
+        'email',
     )
 
     list_display_links = (
-        'nickname',
-        'username',
+        'user_id',
+        'name',
     )
+
+
+
+    

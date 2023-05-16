@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from rest_framework.authtoken.models import Token
-from .models import User, UserManager
+from .models import User, UserManager, Address
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
@@ -13,22 +13,28 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 
 
-UNIVERSITY_CHOICES = (
-    ('dongduk', '동덕여자대학교'),
-    ('sungshin', '성신여자대학교'),
-    ('soongsil', '숭실대학교'),
-    ('hanyang', '한양대학교')
-)
+
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Address
+        fields = '__all__'
 
 
+# user_id, name, gender, birth, phone_number, email, address, password=None
 class RegisterSerializer(serializers.ModelSerializer):
-    
+    address = AddressSerializer()
+
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+    )
+
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())],
     )
     
-    nickname = serializers.CharField(
+    name = serializers.CharField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
     )
@@ -41,15 +47,16 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     password2 = serializers.CharField(write_only=True, required=True)
 
-    university = serializers.ChoiceField(
+    gender = serializers.ChoiceField(
         required=True,
-        choices=UNIVERSITY_CHOICES
+        choices=GENDER_CHOICES,
     )
+
 
     class Meta:
         model = User
-        fields = ('username', 'nickname', 'password',
-                  'password2', 'university', 'email')
+        fields = ('user_id', 'name', 'password',
+                  'password2', 'gender', 'phone_number', 'address', 'birth', 'email')
 
     def validate(self, data):
         if data['password'] != data['password2']:
@@ -59,12 +66,23 @@ class RegisterSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
+        address_data = validated_data['address']
+        # address 정보를 post받는 serializer
+        address_serializer = AddressSerializer(data=address_data)
+        address_serializer.is_valid(raise_exception=True)
+        address = address_serializer.save()
+
         user = User.objects.create_user(
-            username=validated_data['username'],
-            nickname=validated_data['nickname'],
-            university=validated_data['university'],
+            user_id=validated_data['user_id'],
+            name=validated_data['name'],
+            gender=validated_data['gender'],
+            phone_number=validated_data['phone_number'],
+            birth=validated_data['birth'],
             email=validated_data['email'],
+            address=address,
         )
+
+        # Address.objects.create(user=user, **address)
 
         user.set_password(validated_data['password'])
         user.is_active = False
@@ -89,7 +107,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField(required=True)
+    user_id = serializers.CharField(required=True)
     password = serializers.CharField(required=True, write_only=True)
 
     def validate(self, data):
@@ -98,7 +116,7 @@ class LoginSerializer(serializers.Serializer):
             token = Token.objects.get(user=user)
             result = {
                 'token': token,
-                'nickname': user.nickname,
+                'name': user.name,
             }
             return result
         raise serializers.ValidationError(

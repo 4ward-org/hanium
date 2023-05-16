@@ -28,9 +28,9 @@ class LoginView(generics.GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         token = serializer.validated_data['token']
-        nickname = serializer.validated_data['nickname']
+        name = serializer.validated_data['name']
         return Response({"token": token.key,
-                        "nickname": nickname},
+                        "name": name},
                         status=status.HTTP_200_OK)
 
 
