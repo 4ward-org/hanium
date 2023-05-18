@@ -17,56 +17,56 @@
       <form action="http://127.0.0.1:8000/users/register/" method="post">
         <!-- 유저ID -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <input id="user-id" type="text"  class="form-control form-control-xl" placeholder="ID" required/>
+          <input id="user-id" type="text" name="user_id" class="form-control form-control-xl" placeholder="ID" required/>
           <div class="form-control-icon">
             <i class="bi bi-person-fill"></i>
           </div>
         </div>
         <!-- 유저네임 -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <input id="user-name" type="text" class="form-control form-control-xl" placeholder="Username" required/>
+          <input id="user-name" type="text" name="name" class="form-control form-control-xl" placeholder="Username" required/>
           <div class="form-control-icon">
             <i class="bi bi-person"></i>
           </div>
         </div>
         <!-- 비밀번호 -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <input id="pw" type="password" class="form-control form-control-xl" placeholder="Password" required/>
+          <input id="pw" type="password" name="password" class="form-control form-control-xl" placeholder="Password" required/>
           <div class="form-control-icon">
             <i class="bi bi-shield-lock"></i>
           </div>
         </div>
         <!-- 비밀번호 확인 -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <input id="pw-check" type="password" class="form-control form-control-xl" placeholder="Confirm Password" required/>
+          <input id="pw-check" type="password" name="password2" class="form-control form-control-xl" placeholder="Confirm Password" required/>
           <div class="form-control-icon">
             <i class="bi bi-shield-lock"></i>
           </div>
         </div>
         <!-- 이메일 -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <input id="email" type="email" class="form-control form-control-xl" placeholder="name@example.com" required/>
+          <input id="email" type="email" name="email" class="form-control form-control-xl" placeholder="name@example.com" required/>
           <div class="form-control-icon">
             <i class="bi bi-envelope"></i>
           </div>
         </div>
         <!-- 우편번호 -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <input id="address" type="text" class="form-control form-control-xl" placeholder="우편번호" required/>
+          <input id="address" type="text" name="address" class="form-control form-control-xl" placeholder="우편번호" required/>
           <div class="form-control-icon">
             <i class="bi bi-building"></i>
           </div>
         </div>
         <!-- 휴대폰 번호 -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <input id="phone" type="text" class="form-control form-control-xl" placeholder="010-0000-0000" required/>
+          <input id="phone" type="text" name="phone_number"  class="form-control form-control-xl" placeholder="010-0000-0000" required/>
           <div class="form-control-icon">
             <i class="bi bi-phone"></i>
           </div>
         </div>
         <!-- 성별 -->
         <div class="form-group position-relative has-icon-left mb-4">
-          <select  type="gender" id="gender" class="form-select form-control-xl py-3" required>
+          <select  type="gender" id="gender" name="gender" class="form-select form-control-xl py-3" required>
             <option selected>Gender</option>
             <option value="1">Male</option>
             <option value="2">Female</option>
@@ -74,7 +74,7 @@
         </div>
         <!-- 생년월일 -->
         <div>
-          <input id="birth" type="date" class="form-control mb-3 py-3 flatpickr-no-config"  required/>
+          <input id="birth" type="date" name="birth" class="form-control mb-3 py-3 flatpickr-no-config"  required/>
         </div>
         <!-- 회원가입 버튼 -->
         <button type="submit" id="sign-in" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
@@ -95,7 +95,7 @@
   </div>
 </div>
 <!-- 코드 -->
-<script src="register.js"></script>
+<!-- <script src="register.js"></script> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
   let userId = $("#userId")
