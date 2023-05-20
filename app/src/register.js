@@ -19,6 +19,7 @@ if(pw.value != pwCheck.value){
 
 function requestPostBodyJson(){
     console.log("")
+    console.log('122')
     console.log("[requestPostBodyJson] : [start]")
 
     var reqURL ="http://127.0.0.1:8000/users/register/"
@@ -43,6 +44,7 @@ function requestPostBodyJson(){
         contentType : "application/json; charset=utf-8"
     })
 }
+
 signBtn.addEventListener("click",requestPostBodyJson)
 
 
