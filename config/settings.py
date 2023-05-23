@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-nt*=488d7opy%uss5vgn9b^tagb1a$5rp$n!0b9ay-u^tk=#^z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     
     # user앱
     'users',
+
+    # cors 해결
+    'corsheaders',
     
     "django.contrib.admin",
     "django.contrib.auth",
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', # <- 가능한 높게 위치시켜야 
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -54,6 +58,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True # <- 모든 호스트 허용
 
 ROOT_URLCONF = "config.urls"
 

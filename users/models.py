@@ -107,6 +107,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     address = models.OneToOneField(
         Address, 
         on_delete=models.CASCADE,
+        null=True,
+        blank=True,
         )
 
     email = models.EmailField(
