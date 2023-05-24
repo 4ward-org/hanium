@@ -15,8 +15,12 @@
       <p class="auth-subtitle mb-5">
         Input your data to register to our website.
       </p>
-
-      <form action="http://127.0.0.1:8000/users/register/" method="post">
+      <iframe id="iframe1" name="iframe1" style="display: none"></iframe>
+      <form
+        action="http://127.0.0.1:8000/users/register/"
+        method="post"
+        target="iframe1"
+      >
         <!-- 유저ID -->
         <div class="form-group position-relative has-icon-left mb-4">
           <input
@@ -167,6 +171,7 @@
           type="submit"
           id="sign-in"
           class="btn btn-primary btn-block btn-lg shadow-lg mt-5"
+          onclick="clickAlert()"
         >
           Sign Up
         </button>
@@ -211,5 +216,8 @@
         }).open();
       });
   };
+  function clickAlert() {
+    alert("이메일을 통한 인증 부탁드립니다.");
+  }
 </script>
 {% endblock %}
