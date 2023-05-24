@@ -15,17 +15,25 @@
       <p class="auth-subtitle mb-5">
         Input your data to register to our website.
       </p>
+<<<<<<< HEAD
       <iframe id="iframe1" name="iframe1" style="display: none"></iframe>
       <form
         action="http://127.0.0.1:8000/users/register/"
         method="post"
         target="iframe1"
       >
+=======
+      <!-- <iframe id="iframe1" name="iframe1" style="display:none"></iframe> -->
+      <!-- <form id="form" name="form" target="iframe1" action="http://127.0.0.1:8000/users/register/" method="post"> -->
+        <!-- <form action="http://127.0.0.1:8000/users/register/" method="post"> -->
+          <form id="myForm">
+>>>>>>> 7b17aee3f0bbef10401adf62b7f0b01c7b4d9431
         <!-- 유저ID -->
         <div class="form-group position-relative has-icon-left mb-4">
           <input
             id="user-id"
             type="text"
+            name="user_id"
             class="form-control form-control-xl"
             placeholder="ID"
             required
@@ -91,10 +99,12 @@
           </div>
         </div>
         <!-- 우편번호 -->
+        <div name="address">
         <div class="form-group position-relative has-icon-left mb-4">
           <input
             id="addressNum"
             type="text"
+            name="post_code"
             class="form-control form-control-xl"
             placeholder="우편번호"
             readonly
@@ -108,6 +118,7 @@
           <input
             id="addressDoro"
             type="text"
+            name="road_address"
             class="form-control form-control-xl"
             placeholder="도로명 주소"
             required
@@ -120,6 +131,7 @@
           <input
             id="addressDetail"
             type="text"
+            name="detail_address"
             class="form-control form-control-xl"
             placeholder="상세주소"
             required
@@ -128,6 +140,7 @@
             <i class="bi bi-building"></i>
           </div>
         </div>
+      </div>
         <!-- 휴대폰 번호 -->
         <div class="form-group position-relative has-icon-left mb-4">
           <input
@@ -135,7 +148,7 @@
             type="text"
             name="phone_number"
             class="form-control form-control-xl"
-            placeholder="010-0000-0000"
+            placeholder="01012345678"
             required
           />
           <div class="form-control-icon">
@@ -152,8 +165,8 @@
             required
           >
             <option selected>Gender</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
           </select>
         </div>
         <!-- 생년월일 -->
@@ -202,7 +215,10 @@
 });
 </script> -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="register.js"></script>
 <script>
+  // 카카오 api로 주소 가져오기
   window.onload = function () {
     document
       .getElementById("addressNum")
@@ -216,8 +232,62 @@
         }).open();
       });
   };
+<<<<<<< HEAD
   function clickAlert() {
     alert("이메일을 통한 인증 부탁드립니다.");
   }
+=======
+//   document.addEventListener('DOMContentLoaded', function() {
+//   document.getElementById('myForm').addEventListener('submit', function(event) {
+//     event.preventDefault(); // 폼의 기본 동작(페이지 이동)을 막음
+
+//     var formData = new FormData(this); // 폼 데이터 생성
+
+//     fetch('http://127.0.0.1:8000/users/register/', {
+//       method: 'POST',
+//       body: JSON.stringify(formData),
+//       contentType: "application/json"
+//     })
+//     .then(response => {
+//       if (response.ok) {
+//         return response.json(); // JSON 형식으로 응답 데이터 파싱
+//       } else {
+//         throw new Error('Error: ' + response.status);
+//       }
+//     })
+//     .then(data => {
+//       // 서버로부터 받은 응답 데이터 처리
+//       console.log(data);
+//     })
+//     .catch(error => {
+//       // 오류 처리
+//       console.error(error);
+//     });
+//   });
+// });
+
+  // 백엔드서버로 데이터전송
+  // $(document).ready(function() {
+  //   $('#myForm').submit(function(event) {
+  //     event.preventDefault(); // 폼의 기본 동작(페이지 이동)을 막음
+
+  //     var formData = $(this).serialize(); // 폼 데이터를 직렬화
+
+  //     $.ajax({
+  //       url: 'http://127.0.0.1:8000/users/register/', // 백엔드 주소
+  //       type: 'post',
+  //       data: formData,
+  //       success: function(response) {
+  //         // 서버로부터 받은 응답 처리
+  //         console.log(response);
+  //       },
+  //       error: function(xhr, status, error) {
+  //         // 오류 처리
+  //         console.log(error);
+  //       }
+  //     });
+  //   });
+  // });
+>>>>>>> 7b17aee3f0bbef10401adf62b7f0b01c7b4d9431
 </script>
 {% endblock %}

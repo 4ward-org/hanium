@@ -7,7 +7,9 @@ let address = document.getElementById("address")
 let phone = document.getElementById("phone")
 let gender = document.getElementById("gender")
 let birth = document.getElementById("birth")
-
+let post = document.getElementById("addressNum")
+let doro = document.getElementById("addressDoro") 
+let detail = document.getElementById("addressDetail")
 let signBtn = document.getElementById("sign-in")
 
 function check(){
@@ -30,7 +32,11 @@ function requestPostBodyJson(){
         "password2" : pwCheck.value,
         "gender" : gender.value,
         "phone_number" : phone.value,
-        "address" : address.value,
+        "address" : {
+            "post_code" : post.value,
+            "road_address" : doro.value,
+            "detail_address" : detail.value,
+        } ,
         "birth" : birth.value,
         "email" : email.value,
     }
