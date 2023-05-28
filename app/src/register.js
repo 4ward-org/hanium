@@ -10,6 +10,7 @@ let birth = document.getElementById("birth")
 let post = document.getElementById("addressNum")
 let doro = document.getElementById("addressDoro") 
 let detail = document.getElementById("addressDetail")
+
 let signBtn = document.getElementById("sign-in")
 
 function check(){
@@ -20,10 +21,6 @@ if(pw.value != pwCheck.value){
 
 
 function requestPostBodyJson(){
-    console.log("")
-    console.log('122')
-    console.log("[requestPostBodyJson] : [start]")
-
     var reqURL ="http://127.0.0.1:8000/users/register/"
     var jsonData = {
         "user_id" : userId.value,
@@ -36,7 +33,7 @@ function requestPostBodyJson(){
             "post_code" : post.value,
             "road_address" : doro.value,
             "detail_address" : detail.value,
-        } ,
+        },
         "birth" : birth.value,
         "email" : email.value,
     }
@@ -44,7 +41,7 @@ function requestPostBodyJson(){
         url: "http://127.0.0.1:8000/users/register/",
         data : JSON.stringify(jsonData),
         type : "post",
-        async : false,
+        async : true,
         timeout : 5000,
         dataType: "JSON",
         contentType : "application/json; charset=utf-8"

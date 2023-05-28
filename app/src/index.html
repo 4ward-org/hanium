@@ -17,7 +17,7 @@
           </div>
           <div class="ms-5 name"></div>
           <div class="avatar avatar-xl">
-            <h3 style="display: inleine">4ward_chat shopping</h3>
+            <h3 style="display: inline">4ward_chat shopping</h3>
           </div>
         </div>
       </div>
@@ -25,15 +25,25 @@
   </div>
 </div>
 <div class="page-content h-100">
-  <section class="row">
-    <!-- 대화 내용 보는 곳 -->
-    <div class="col-12 col-lg-12">
+  
+    <table class="table table-hover table-lg">
+      <tbody id="chatBox">
+
+      </tbody>
+    </table>
+</div>
+<input type="text" id="message" placeholder="Type a message..." />
+<button onclick="sendMessage()">Send</button>
+
+<!-- <section class="row"> -->
+<!-- 대화 내용 보는 곳 -->
+<!-- <div class="col-12 col-lg-12">
       <div class="row">
         <div class="card">
           <div class="card-header">
             <h4>Let's ask!</h4>
           </div>
-          <div class="card-body">
+          <div class="card-body" id="chatBox">
             <div class="table-responsive">
               <table class="table table-hover table-lg">
                 <tbody>
@@ -65,9 +75,9 @@
                         스트릿 홍대 느낌나게 해드릴까요?
                       </p>
                     </td>
-                  </tr>
-                  <!-- 테이블에서 제  -->
-                  <tr>
+                  </tr> -->
+<!-- 테이블에서 제  -->
+<!-- <tr>
                     <td class="col-3">
                       <div class="d-flex align-items-center">
                         <div class="avatar avatar-md">
@@ -76,22 +86,22 @@
                         <p class="font-bold ms-3 mb-0">김한경</p>
                       </div>
                     </td>
-                    <td class="col-auto">
-                      <!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
-                      <div class="form-floating">
+                    <td class="col-auto"> -->
+<!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
+<!-- <div class="form-floating">
                         <p class="mb-0">진행시켜</p>
-                      </div>
-                      <!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
-                      <!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
+                      </div> -->
+<!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
+<!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
                                                     <i class="bi bi-pencil"></i>
                                                 </button>
                                                  -->
-                    </td>
+<!-- </td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <!-- <tr>
+            </div> -->
+<!-- <tr>
                             <td class="col-3">
                                 <div class="d-flex align-items-center">
                                     <div class="avatar avatar-md">
@@ -113,13 +123,13 @@
                                     </button>
                             </td>
                         </tr> -->
-          </div>
+<!-- </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-3">
-      <!-- 최근 메시지 보기 예시 -->
-      <!-- <div class="card">
+    <div class="col-12 col-lg-3"> -->
+<!-- 최근 메시지 보기 예시 -->
+<!-- <div class="card">
                 <div class="card-header">
                     <h4>Recent Messages</h4>
                 </div>
@@ -153,8 +163,9 @@
                     </div>
                 </div>
             </div>  -->
-    </div>
-    <div class="col-12 col-lg-12">
+<!-- </div> -->
+<!-- 새 메세지 입력창 -->
+<!-- <div class="col-12 col-lg-12">
       <div class="row">
         <div class="card">
           <table class="table table-hover table-lg">
@@ -168,18 +179,18 @@
                     <p class="font-bold ms-3 mb-0">김한경</p>
                   </div>
                 </td>
-                <td class="col-auto">
-                  <!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
-                  <div class="form-floating">
+                <td class="col-auto"> -->
+<!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
+<!-- <div class="form-floating">
                     <div class="d-flex bd-highlight">
                         <div class="p-2 flex-fill bd-highlight">
                           <textarea
                             class="form-control col-auto"
                             placeholder="Comments"
                             id="floatingTextarea"
-                          ></textarea>
-                          <!-- <label for="floatingTextarea">Comments </label> -->
-                        </div>
+                          ></textarea> -->
+<!-- <label for="floatingTextarea">Comments </label> -->
+<!-- </div>
                         <div class="p-2 bd-highlight pt-3">
                           <button
                             id="send"
@@ -190,8 +201,8 @@
                           </button>
                         </div>
                       </div>
-                    </div>
-                    <!-- <textarea
+                    </div> -->
+<!-- <textarea
                       class="form-control col-auto"
                       placeholder="Leave a comment here"
                       id="floatingTextarea"
@@ -204,145 +215,106 @@
                     >
                       <i class="bi bi-pencil"></i>
                     </button> -->
-                  </div>
-                  <!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
-                  <!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
+</div>
+<!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
+<!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
                                         <i class="bi bi-pencil"></i>
                                     </button>
                                      -->
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
+</td>
+</tr>
+<table class="table table-hover table-lg">
+  <tbody></tbody>
+
+</table>
 </div>
-<script>
-  // 웹소켓 서버에 연결
-  const socket = new WebSocket("ws://localhost:5173/");
+</div>
+</div>
+</section>
+</div>
+<script src="socket.js">
 
-  // 연결이 성공적으로 수립되었을 때 호출되는 이벤트 핸들러
-  socket.onopen = function(event) {
-      console.log("WebSocket connection established.");
-  };
+  // // 웹소켓 열어달라는 코드
+  // let socket = new WebSocket("ws://localhost:8081");
+  // const Chat = (function () {
+  //   const myName = "blue";
 
-// 서버로부터 메시지를 수신했을 때 호출되는 이벤트 핸들러
-  socket.onmessage = function(event) {
-      const message = event.data;
-      displayMessage(message);
-  };
+  //   // init 함수
+  //   function init() {
+  //     // enter 키 이벤트
+  //     $(document).on("keydown", "div.input-div textarea", function (e) {
+  //       if (e.keyCode == 13 && !e.shiftKey) {
+  //         e.preventDefault();
+  //         const message = $(this).val();
 
-// 에러가 발생했을 때 호출되는 이벤트 핸들러
-  socket.onerror = function(error) {
-      console.error("WebSocket error:", error);
-  };
+  //         // 메시지 전송
+  //         sendMessage(message);
+  //         // 입력창 clear
+  //         clearTextarea();
+  //       }
+  //     });
+  //   }
+  //   createMessageTag()
+  //   // 메세지 태그 생성
+  //   function createMessageTag(LR_className, senderName, message) {
+  //     // 형식 가져오기
+  //     let chatLi = $("div.chat.format ul li").clone();
+  //     // 조건문
+  //     // 카드 배출일때
+  //     // 결제 요청일때
+  //     //
+  //     // 값 채우기
 
-// 연결이 종료되었을 때 호출되는 이벤트 핸들러
-  socket.onclose = function(event) {
-      console.log("WebSocket connection closed.");
-  };
+  //     chatLi.addClass(LR_className);
+  //     chatLi.find(".sender span").text(senderName);
+  //     chatLi.find(".message span").text(message);
 
-// 메시지 전송 함수
-  function sendMessage() {
-      const messageInput = document.getElementById("message");
-      const message = messageInput.value;
-      socket.send(message);
-      messageInput.value = "";
-  }
+  //     return chatLi;
+  //   }
 
-// 채팅창에 메시지 표시 함수
-  function displayMessage(message) {
-      const chatbox = document.getElementById("chatbox");
-      const messageElement = document.createElement("div");
-      messageElement.innerText = message;
-      chatbox.appendChild(messageElement);
-  }
+  //   // 메세지 태그 append
+  //   function appendMessageTag(LR_className, senderName, message) {
+  //     const chatLi = createMessageTag(LR_className, senderName, message);
 
+  //     $("div.chat:not(.format) ul").append(chatLi);
+
+  //     // 스크롤바 아래 고정
+  //     $("div.chat").scrollTop($("div.chat").prop("scrollHeight"));
+  //   }
+
+  //   // 메세지 전송
+  //   function sendMessage(message) {
+  //     // 서버에 전송하는 코드로 후에 대체
+  //     const data = {
+  //       senderName: "blue",
+  //       message: message,
+  //     };
+
+  //     // 통신하는 기능이 없으므로 여기서 receive
+  //     socket.send(data);
+  //     receive(data);
+  //   }
+
+  //   // 메세지 입력박스 내용 지우기
+  //   function clearTextarea() {
+  //     $("div.input-div textarea").val("");
+  //   }
+
+  //   // 메세지 수신
+  //   function receive(data) {
+  //     const LR = data.senderName != myName ? "left" : "right";
+  //     appendMessageTag("right", data.senderName, data.message);
+  //   }
+
+  //   return {
+  //     init: init,
+  //   };
+  // })();
+
+  // $(function () {
+  //   Chat.init();
+  // });
 </script>
-<!-- <script>
-  // 웹소켓 열어달라는 코드
-  let socket = new WebSocket("ws://localhost:8081");
-  const Chat = (function () {
-    const myName = "blue";
-
-    // init 함수
-    function init() {
-      // enter 키 이벤트
-      $(document).on("keydown", "div.input-div textarea", function (e) {
-        if (e.keyCode == 13 && !e.shiftKey) {
-          e.preventDefault();
-          const message = $(this).val();
-
-          // 메시지 전송
-          sendMessage(message);
-          // 입력창 clear
-          clearTextarea();
-        }
-      });
-    }
-
-    // 메세지 태그 생성
-    function createMessageTag(LR_className, senderName, message) {
-      // 형식 가져오기
-      let chatLi = $("div.chat.format ul li").clone();
-      // 조건문
-      // 카드 배출일때
-      // 결제 요청일때
-      //
-      // 값 채우기
-
-      chatLi.addClass(LR_className);
-      chatLi.find(".sender span").text(senderName);
-      chatLi.find(".message span").text(message);
-
-      return chatLi;
-    }
-
-    // 메세지 태그 append
-    function appendMessageTag(LR_className, senderName, message) {
-      const chatLi = createMessageTag(LR_className, senderName, message);
-
-      $("div.chat:not(.format) ul").append(chatLi);
-
-      // 스크롤바 아래 고정
-      $("div.chat").scrollTop($("div.chat").prop("scrollHeight"));
-    }
-
-    // 메세지 전송
-    function sendMessage(message) {
-      // 서버에 전송하는 코드로 후에 대체
-      const data = {
-        senderName: "blue",
-        message: message,
-      };
-
-      // 통신하는 기능이 없으므로 여기서 receive
-      socket.send(data);
-      resive(data);
-    }
-
-    // 메세지 입력박스 내용 지우기
-    function clearTextarea() {
-      $("div.input-div textarea").val("");
-    }
-
-    // 메세지 수신
-    function resive(data) {
-      const LR = data.senderName != myName ? "left" : "right";
-      appendMessageTag("right", data.senderName, data.message);
-    }
-
-    return {
-      init: init,
-    };
-  })();
-
-  $(function () {
-    Chat.init();
-  });
-</script> -->
 {% endblock %} {% block js %}
 <!-- Need: Apexcharts -->
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
