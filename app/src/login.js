@@ -26,6 +26,10 @@ function requestPostBodyJson() {
   });
 }
 
+function requestGetBodyJson() {
+  va;
+}
+
 function test() {
   console.log(userId.value);
   console.log(pw.value);
