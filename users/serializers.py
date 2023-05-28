@@ -116,7 +116,7 @@ class LoginSerializer(serializers.Serializer):
             token = Token.objects.get(user=user)
             result = {
                 'token': token,
-                'name': user.name,
+                # 'name': user.name,
             }
             return result
         raise serializers.ValidationError(
@@ -126,7 +126,7 @@ class LoginSerializer(serializers.Serializer):
 class UserInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("nickname",)
+        fields = ("name",)
 
 # class ProfileSerializer(serializers.ModelSerializer):
 #     class Meta:

@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from chat.routing import websocket_urlpatterns
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('users/', include('users.urls')),
-    # path('chat/', include('chat.urls')),
+    path('chat/', include('chat.urls')),
 ]
+
+# WebSocket URL 매핑 추가
+urlpatterns += websocket_urlpatterns

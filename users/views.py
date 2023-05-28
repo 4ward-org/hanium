@@ -29,9 +29,8 @@ class LoginView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         token = serializer.validated_data['token']
         name = serializer.validated_data['name']
-        return Response({"token": token.key,
-                        "name": name},
-                        status=status.HTTP_200_OK)
+        return Response({"token": token.key,},
+                        status=status.HTTP_200_OK) # user.name = name
 
 
 class UserActivate(APIView):
