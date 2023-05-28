@@ -1,9 +1,11 @@
 const btn = document.getElementById("btn");
+const userId = document.getElementById("userId");
+const password = document.getElementById("password");
 
 function handleLogin(response) {
-  if (response.status === 200) {
-    const token = response.data.token;
-    const name = response.data.name;
+  if (response.result === "success") {
+    // const token = response.data.token.key
+    // const name = response.data.name
 
     // 토큰과 이름을 사용하여 추가적인 통신 또는 작업을 수행합니다.
     // 예시: 로그인 성공 시 다른 API 호출
@@ -12,17 +14,15 @@ function handleLogin(response) {
     // 페이지 이동 등 로직을 수행합니다.
     window.location.replace("http://localhost:5173/index.html"); // 대시보드 페이지로 이동
   }else{
-    console.log("에러")
-  }
+    console.log(response); 
 }
-
+}
 function login() {
-  const userId = document.getElementById("userId").value;
-  const password = document.getElementById("password").value;
+
 
   const jsonData = JSON.stringify({
-    user_id: userId,
-    password: password,
+    user_id: userId.value,
+    password: password.value,
   });
 
   // AJAX 요청
@@ -40,6 +40,11 @@ function login() {
 }
 
 btn.addEventListener("click", login);
+
+
+function test(){
+  console.log(userId.value ,password.value)
+}
 
 // let userId = document.getElementById("userId");
 // let pw = document.getElementById("password");
