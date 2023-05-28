@@ -10,7 +10,7 @@ function handleLogin(response) {
     // 예시: 사용자 정보 저장
   
     // 페이지 이동 등 로직을 수행합니다.
-    window.location.replace("http://localhost:5173/index.html"); // 대시보드 페이지로 이동
+    // window.location.replace("http://localhost:5173/index.html"); // 대시보드 페이지로 이동
     console.log(response)
   }else{
     console.log(response); 
