@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     
     # user앱
     'users',
+    'chat',
 
     # cors 해결
     'corsheaders',
