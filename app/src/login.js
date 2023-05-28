@@ -4,8 +4,6 @@ const password = document.getElementById("password");
 
 function handleLogin(response) {
   if (response.result === "success") {
-    // const token = response.data.token.key
-    // const name = response.data.name
 
     // 토큰과 이름을 사용하여 추가적인 통신 또는 작업을 수행합니다.
     // 예시: 로그인 성공 시 다른 API 호출
@@ -13,6 +11,7 @@ function handleLogin(response) {
   
     // 페이지 이동 등 로직을 수행합니다.
     window.location.replace("http://localhost:5173/index.html"); // 대시보드 페이지로 이동
+    console.log(response)
   }else{
     console.log(response); 
 }
