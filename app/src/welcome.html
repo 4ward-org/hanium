@@ -1,0 +1,277 @@
+{% set title = 'Login' %} {% extends 'src/layouts/auth.html' %}
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+{% block content%}
+<div class="row h-100">
+  <div class="col-lg-6 col-12">
+    <div id="auth-left">
+      <div class="auth-logo">
+        <a href="index.html"
+          ><img src="assets/static/images/logo/logo.svg" alt="Logo"
+        /></a>
+      </div>
+      <h1 class="auth-title">Sign Up</h1>
+      <p class="auth-subtitle mb-5">
+        Input your data to register to our website.
+      </p>
+      <!-- <iframe id="iframe1" name="iframe1" style="display:none"></iframe> -->
+      <!-- <form id="form" name="form" target="iframe1" action="http://127.0.0.1:8000/users/register/" method="post"> -->
+        <!-- <form action="http://127.0.0.1:8000/users/register/" method="post"> -->
+          <form id="myForm">
+        <!-- 유저ID -->
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="user-id"
+            type="text"
+            name="user_id"
+            class="form-control form-control-xl"
+            placeholder="ID"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-person-fill"></i>
+          </div>
+        </div>
+        <!-- 유저네임 -->
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="user-name"
+            type="text"
+            name="name"
+            class="form-control form-control-xl"
+            placeholder="Username"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-person"></i>
+          </div>
+        </div>
+        <!-- 비밀번호 -->
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="pw"
+            type="password"
+            name="password"
+            class="form-control form-control-xl"
+            placeholder="Password"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-shield-lock"></i>
+          </div>
+        </div>
+        <!-- 비밀번호 확인 -->
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="pw-check"
+            type="password"
+            name="password2"
+            class="form-control form-control-xl"
+            placeholder="Confirm Password"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-shield-lock"></i>
+          </div>
+        </div>
+        <!-- 이메일 -->
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="email"
+            type="email"
+            name="email"
+            class="form-control form-control-xl"
+            placeholder="name@example.com"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-envelope"></i>
+          </div>
+        </div>
+        <!-- 우편번호 -->
+        <div name="address">
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="addressNum"
+            type="text"
+            name="post_code"
+            class="form-control form-control-xl"
+            placeholder="우편번호"
+            readonly
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-building"></i>
+          </div>
+        </div>
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="addressDoro"
+            type="text"
+            name="road_address"
+            class="form-control form-control-xl"
+            placeholder="도로명 주소"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-building"></i>
+          </div>
+        </div>
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="addressDetail"
+            type="text"
+            name="detail_address"
+            class="form-control form-control-xl"
+            placeholder="상세주소"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-building"></i>
+          </div>
+        </div>
+      </div>
+        <!-- 휴대폰 번호 -->
+        <div class="form-group position-relative has-icon-left mb-4">
+          <input
+            id="phone"
+            type="text"
+            name="phone_number"
+            class="form-control form-control-xl"
+            placeholder="01012345678"
+            required
+          />
+          <div class="form-control-icon">
+            <i class="bi bi-phone"></i>
+          </div>
+        </div>
+        <!-- 성별 -->
+        <div class="form-group position-relative has-icon-left mb-4">
+          <select
+            type="gender"
+            id="gender"
+            name="gender"
+            class="form-select form-control-xl py-3"
+            required
+          >
+            <option selected>Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </div>
+        <!-- 생년월일 -->
+        <div>
+          <input
+            id="birth"
+            type="date"
+            name="birth"
+            class="form-control mb-3 py-3 flatpickr-no-config"
+            required
+          />
+        </div>
+        <!-- 회원가입 버튼 -->
+        <button
+          type="submit"
+          id="sign-in"
+          class="btn btn-primary btn-block btn-lg shadow-lg mt-5"
+        >
+          Sign Up
+        </button>
+      </form>
+      <!-- 이미 아이디가 있는 경우 -->
+      <div class="text-center mt-5 text-lg fs-4">
+        <p class="text-gray-600">
+          Already have an account?
+          <a href="auth-login.html" class="font-bold">Log in</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 d-none d-lg-block">
+    <div id="auth-right"></div>
+  </div>
+</div>
+<!-- 코드 -->
+<!-- <script src="register.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  let userId = $("#userId")
+  $(document).ready(function(){
+  $("#sign-in").click(function(){
+    console.log("test")
+    console.log(userId.text())
+  });
+});
+</script> -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="register.js"></script>
+<script>
+  // 카카오 api로 주소 가져오기
+  window.onload = function () {
+    document
+      .getElementById("addressNum")
+      .addEventListener("click", function () {
+        new daum.Postcode({
+          oncomplete: function (data) {
+            document.querySelector("#addressNum").value = data.zonecode;
+            document.querySelector("#addressDoro").value = data.address;
+            document.querySelector("#addressDetail").focus();
+          },
+        }).open();
+      });
+  };
+//   document.addEventListener('DOMContentLoaded', function() {
+//   document.getElementById('myForm').addEventListener('submit', function(event) {
+//     event.preventDefault(); // 폼의 기본 동작(페이지 이동)을 막음
+
+//     var formData = new FormData(this); // 폼 데이터 생성
+
+//     fetch('http://127.0.0.1:8000/users/register/', {
+//       method: 'POST',
+//       body: JSON.stringify(formData),
+//       contentType: "application/json"
+//     })
+//     .then(response => {
+//       if (response.ok) {
+//         return response.json(); // JSON 형식으로 응답 데이터 파싱
+//       } else {
+//         throw new Error('Error: ' + response.status);
+//       }
+//     })
+//     .then(data => {
+//       // 서버로부터 받은 응답 데이터 처리
+//       console.log(data);
+//     })
+//     .catch(error => {
+//       // 오류 처리
+//       console.error(error);
+//     });
+//   });
+// });
+
+  // 백엔드서버로 데이터전송
+  // $(document).ready(function() {
+  //   $('#myForm').submit(function(event) {
+  //     event.preventDefault(); // 폼의 기본 동작(페이지 이동)을 막음
+
+  //     var formData = $(this).serialize(); // 폼 데이터를 직렬화
+
+  //     $.ajax({
+  //       url: 'http://127.0.0.1:8000/users/register/', // 백엔드 주소
+  //       type: 'post',
+  //       data: formData,
+  //       success: function(response) {
+  //         // 서버로부터 받은 응답 처리
+  //         console.log(response);
+  //       },
+  //       error: function(xhr, status, error) {
+  //         // 오류 처리
+  //         console.log(error);
+  //       }
+  //     });
+  //   });
+  // });
+</script>
+{% endblock %}
