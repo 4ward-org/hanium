@@ -13,7 +13,7 @@ function handleLogin(response) {
     window.location.replace("http://localhost:5173/index.html"); // 대시보드 페이지로 이동
   } else {
     // 로그인 실패 처리
-    alert("로그인에 실패하였습니다.");
+    console.log("로그인에 실패하였습니다.");
   }
 }
 
