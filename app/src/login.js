@@ -3,13 +3,13 @@ let pw = document.getElementById("password");
 let signBtn = document.getElementById("btn");
 
 function requestPostBodyJson() {
-  var reqURL = "http://127.0.0.1:8000/users/register/";
+  var reqURL = "http://127.0.0.1:8000/users/login/";
   var jsonData = {
     user_id: userId.value,
     password: pw.value,
   };
   $.ajax({
-    url: "http://127.0.0.1:8000/users/register/",
+    url: "http://127.0.0.1:8000/users/login/",
     data: JSON.stringify(jsonData),
     type: "post",
     async: false,
@@ -31,4 +31,4 @@ function test() {
   console.log(pw.value);
 }
 
-signBtn.addEventListener("click", test);
+signBtn.addEventListener("click", requestPostBodyJson);
