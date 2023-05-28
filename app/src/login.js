@@ -4,8 +4,8 @@ const password = document.getElementById("password");
 
 function handleLogin(response) {
   if (response.result === "success") {
-    const token = response.data.token // 로그인 회원 토큰 정보 저장
-    const name = response.data.name // 로그인 회원 유저네임 저장
+    const token = response.data.token; // 로그인 회원 토큰 정보 저장
+    const name = response.data.name; // 로그인 회원 유저네임 저장
     window.location.replace("http://localhost:5173/index.html"); // 메인 페이지로 이동
     console.log(response);
   } else {
