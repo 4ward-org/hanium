@@ -26,73 +26,55 @@
 </div>
 <div class="page-content h-100">
   <table class="table table-hover table-lg">
-    <tbody id="chatBox"></tbody>
+    <!-- <tbody id="chatBox"></tbody> -->
   </table>
 </div>
-<input type="text" id="message" placeholder="Type a message..." />
-<button onclick="sendMessage()">Send</button>
+
 
 <!-- <section class="row"> -->
 <!-- 대화 내용 보는 곳 -->
-<!-- <div class="col-12 col-lg-12">
+<div class="col-12 col-lg-12">
       <div class="row">
-        <div class="card">
-          <div class="card-header">
+        <div class="card" >
+          <div class="card-header" >
             <h4>Let's ask!</h4>
           </div>
-          <div class="card-body" id="chatBox">
+          <div class="card-body" >
             <div class="table-responsive">
               <table class="table table-hover table-lg">
-                <tbody>
-                  <tr>
-                    <td class="col-3">
-                      <div class="d-flex align-items-center">
-                        <div class="avatar avatar-md">
-                          <img src="assets/static/images/faces/5.jpg" />
-                        </div>
-                        <p class="font-bold ms-3 mb-0">김한경</p>
-                      </div>
-                    </td>
-                    <td class="col-auto">
-                      <p class="mb-0">스트릿 패션은 나의 이상향이야!</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="col-3">
-                      <div class="d-flex align-items-center">
-                        <div class="avatar avatar-md">
-                          <img src="assets/static/images/faces/2.jpg" />
-                        </div>
-                        <p class="font-bold ms-3 mb-0">Chatbot</p>
-                      </div>
-                    </td>
-                    <td class="col-auto">
-                      <p class="mb-0">
-                        그럼요! 한경님은 절대로 단정한 패션을 원하지 않아요!
-                        스트릿 홍대 느낌나게 해드릴까요?
-                      </p>
-                    </td>
-                  </tr> -->
+                <tbody id="chatBox">
+                  
+                 
 <!-- 테이블에서 제  -->
-<!-- <tr>
-                    <td class="col-3">
-                      <div class="d-flex align-items-center">
-                        <div class="avatar avatar-md">
-                          <img src="assets/static/images/faces/5.jpg" />
-                        </div>
-                        <p class="font-bold ms-3 mb-0">김한경</p>
-                      </div>
-                    </td>
-                    <td class="col-auto"> -->
-<!-- <textarea class="form-control" placeholder="enter message"></textarea> -->
+
+<!-- <textarea id="message" class="form-control" placeholder="enter message"></textarea> -->
 <!-- <div class="form-floating">
                         <p class="mb-0">진행시켜</p>
                       </div> -->
-<!-- <input type = 'text' id="basicInput" placeholder="Enter What you want"> -->
-<!-- <button id = 'send' onclick="socket.send('go')" class ="btn icon btn-primary">
-                                                    <i class="bi bi-pencil"></i>
-                                                </button>
-                                                 -->
+<!-- <input type = 'text' id="message" placeholder="Enter What you want"> -->
+<!-- <button  onclick="sendMessage()" class ="btn icon btn-primary"><i class="bi bi-pencil"></i>
+</button> -->
+
+                  <div class="form-floating">
+                    <div class="d-flex bd-highlight">
+                        <div class="p-2 flex-fill bd-highlight">
+                          <textarea
+                            class="form-control col-auto"
+                            placeholder="Comments"
+                            id="message"
+                          ></textarea> 
+                  </div> 
+                    <div class="p-2 bd-highlight pt-3">
+                        <button
+                            onclick="sendMessage()"
+                            class="btn icon btn-primary"
+                        >
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        </div>
+                      </div>
+                    </div>                          
+                                                
 <!-- </td>
                   </tr>
                 </tbody>
@@ -188,6 +170,7 @@
                             id="floatingTextarea"
                           ></textarea> -->
 <!-- <label for="floatingTextarea">Comments </label>
+  
 </div>
                         <div class="p-2 bd-highlight pt-3">
                           <button
@@ -314,7 +297,7 @@
   // });
 </script>
 {% endblock %} {% block js %}
-<!-- Need: Apexcharts -->
+<script src="socket.js"></script>
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/static/js/pages/dashboard.js"></script>
 {% endblock %}

@@ -37,9 +37,9 @@ function displayMessage(message) {
   </td>
   <td class="col-auto">
     <p class="mb-0">${message}</p>
-  </td>`
+  </td>`;
   chatBox.appendChild(messageElement);
-//   document.getElementById("chatBox").innerHTML 
+  //   document.getElementById("chatBox").innerHTML
 }
 
 // 메시지 전송 함수
@@ -48,4 +48,12 @@ function sendMessage() {
   const message = messageInput.value;
   displayMessage(message); // 메시지 표시 함수 호출
   messageInput.value = "";
+}
+
+function enterkey() {
+  if (window.event.keyCode == 13) {
+    // 엔터키가 눌렸을 때
+    event.preventDefault();
+    displayMessage(message);
+  }
 }
