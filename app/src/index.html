@@ -220,6 +220,48 @@
   </section>
 </div>
 <script>
+  // 웹소켓 서버에 연결
+  const socket = new WebSocket("ws://localhost:5173/");
+
+  // 연결이 성공적으로 수립되었을 때 호출되는 이벤트 핸들러
+  socket.onopen = function(event) {
+      console.log("WebSocket connection established.");
+  };
+
+// 서버로부터 메시지를 수신했을 때 호출되는 이벤트 핸들러
+  socket.onmessage = function(event) {
+      const message = event.data;
+      displayMessage(message);
+  };
+
+// 에러가 발생했을 때 호출되는 이벤트 핸들러
+  socket.onerror = function(error) {
+      console.error("WebSocket error:", error);
+  };
+
+// 연결이 종료되었을 때 호출되는 이벤트 핸들러
+  socket.onclose = function(event) {
+      console.log("WebSocket connection closed.");
+  };
+
+// 메시지 전송 함수
+  function sendMessage() {
+      const messageInput = document.getElementById("message");
+      const message = messageInput.value;
+      socket.send(message);
+      messageInput.value = "";
+  }
+
+// 채팅창에 메시지 표시 함수
+  function displayMessage(message) {
+      const chatbox = document.getElementById("chatbox");
+      const messageElement = document.createElement("div");
+      messageElement.innerText = message;
+      chatbox.appendChild(messageElement);
+  }
+
+</script>
+<!-- <script>
   // 웹소켓 열어달라는 코드
   let socket = new WebSocket("ws://localhost:8081");
   const Chat = (function () {
@@ -300,7 +342,7 @@
   $(function () {
     Chat.init();
   });
-</script>
+</script> -->
 {% endblock %} {% block js %}
 <!-- Need: Apexcharts -->
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
