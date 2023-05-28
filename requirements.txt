@@ -1,0 +1,3 @@
+transformers>=4.25.1
+bentoml==0.13.1
+torch
