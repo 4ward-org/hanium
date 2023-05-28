@@ -16,13 +16,13 @@ function requestPostBodyJson() {
     timeout: 5000,
     dataType: "JSON",
     contentType: "application/json; charset=utf-8",
-    // success: function (data, textStatus, xhr) {
-    //   if (data == "loginFail") {
-    //     alert("로그인에 실패하였습니다.");
-    //   } else {
-    //     window.location.href = "index.html";
-    //   }
-    // }
+    success: function (data, textStatus, xhr) {
+      if (data == "loginFail") {
+        alert("로그인에 실패하였습니다.");
+      } else {
+        window.location.href = "index.html";
+      }
+    },
   });
 }
 
