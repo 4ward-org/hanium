@@ -14,7 +14,7 @@ class ChatRoomSerializer(serializers.ModelSerializer):
 
     def get_title(self, chat): #SerializerMethodField 를 사용하면 꼭 get_변수이름 이름 함수를 지정해줘야 함.
         return chat.input[0] if chat.input else ''
-
+    
 class RetrieveChatSerializer(serializers.ModelSerializer):
 
     class Meta:
