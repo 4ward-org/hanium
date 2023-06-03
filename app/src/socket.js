@@ -11,7 +11,7 @@ socket.onopen = function (event) {
 // 서버로부터 메시지를 수신했을 때 호출되는 이벤트 핸들러
 socket.onmessage = function (event) {
   const message = event.data;
-  displayMessage(message);
+  displayMessageChatbot(message);
 };
 
 // 에러가 발생했을 때 호출되는 이벤트 핸들러
@@ -24,7 +24,7 @@ socket.onclose = function (event) {
   console.log("WebSocket connection closed.");
 };
 
-// 채팅창에 메시지 표시 함수
+// 채팅창에 메시지 표시 함수 (김한경)
 function displayMessage(message) {
   const chatBox = document.getElementById("chatBox");
   const messageElement = document.createElement("tr");
@@ -35,6 +35,27 @@ function displayMessage(message) {
         <img src="assets/static/images/faces/5.jpg" />
       </div>
       <p class="font-bold ms-3 mb-0">김한경</p>
+    </div>
+  </td>
+  <td class="col-auto">
+    <p class="mb-0">${message}</p>
+  </td>`;
+  chatBox.appendChild(messageElement);
+  //   document.getElementById("chatBox").innerHTML
+}
+
+
+// 채팅창에 메시지 표시 함수 (Chatbot)
+function displayMessageChatbot(message) {
+  const chatBox = document.getElementById("chatBox");
+  const messageElement = document.createElement("tr");
+  messageElement.innerHTML += ` 
+  <td class="col-3">
+    <div class="d-flex align-items-center">
+      <div class="avatar avatar-md">
+        <img src="assets/static/images/faces/5.jpg" />
+      </div>
+      <p class="font-bold ms-3 mb-0">Chatbot</p>
     </div>
   </td>
   <td class="col-auto">
